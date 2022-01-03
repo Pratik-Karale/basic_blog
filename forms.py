@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, PasswordField, EmailField
+from wtforms import StringField, SubmitField, PasswordField
 from wtforms.validators import DataRequired, URL
 from flask_ckeditor import CKEditorField
 
@@ -12,13 +12,13 @@ class CreatePostForm(FlaskForm):
     submit = SubmitField("Submit Post")
 
 class RegisterationForm(FlaskForm):
-    email = EmailField(validators=[DataRequired()])
+    email = StringField(validators=[DataRequired()])
     name = StringField(validators=[DataRequired()])
     password = PasswordField(validators=[DataRequired()])
     submit = SubmitField("Register!")
 
 class LoginForm(FlaskForm):
-    email = EmailField(validators=[DataRequired()])
+    email = StringField(validators=[DataRequired()])
     password = PasswordField(validators=[DataRequired()])
     submit = SubmitField("Login!")
 
