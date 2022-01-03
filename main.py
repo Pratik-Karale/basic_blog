@@ -63,7 +63,7 @@ class Comment(db.Model):
 db.create_all()
 
 
-@app.route('/')
+@app.route('/',methods=["GET","POST"])
 def get_all_posts():
     posts = BlogPost.query.all()
     is_admin=False
